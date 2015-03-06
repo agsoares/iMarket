@@ -105,17 +105,17 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Xb-SR-AN7">
                                 <rect key="frame" x="180" y="304" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-00-Y3X">
                                 <rect key="frame" x="180" y="266" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YiO-FV-fq8">
                                 <rect key="frame" x="180" y="342" width="241" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDj-eB-QiI">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="1014" y="418"/>
         </scene>
-        <!--I Mkt Lists View Controller-->
+        <!--New List-->
         <scene sceneID="FSQ-Nr-phZ">
             <objects>
                 <viewController id="mmC-kJ-UsF" customClass="iMkt_ListsViewController" sceneMemberID="viewController">
@@ -170,13 +170,20 @@
                     <view key="view" contentMode="scaleToFill" id="k8t-pe-bZD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pzB-uM-Jvv">
+                                <rect key="frame" x="0.0" y="-38" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="New List" id="thQ-9N-wQ8"/>
                     <navigationItem key="navigationItem" id="bu7-dT-CRs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aos-ka-7hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="1170"/>
+            <point key="canvasLocation" x="1826" y="1170"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T6S-fj-Zeb">
@@ -189,12 +196,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mmC-kJ-UsF" kind="relationship" relationship="rootViewController" id="sBD-XQ-CWr"/>
+                        <segue destination="gGr-hO-xre" kind="relationship" relationship="rootViewController" id="sBD-XQ-CWr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anM-7j-uqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="281" y="1170"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="WGX-Mx-619">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gGr-hO-xre" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hkM-Xa-9q8"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="xdJ-Jf-eVp">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mmC-kJ-UsF" kind="relationship" relationship="viewControllers" id="oGd-ke-nNC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EB6-Xn-kWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="1170"/>
         </scene>
     </scenes>
 </document>
