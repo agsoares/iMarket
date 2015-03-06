@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABDCADDD1AAA38190012AF15 /* iMkt_NewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDCADDC1AAA38190012AF15 /* iMkt_NewListViewController.m */; };
 		B9FB6F201AAA01F100C0AB00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FB6F1F1AAA01F100C0AB00 /* main.m */; };
 		B9FB6F231AAA01F100C0AB00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FB6F221AAA01F100C0AB00 /* AppDelegate.m */; };
 		B9FB6F291AAA01F100C0AB00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9FB6F271AAA01F100C0AB00 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ABDCADDB1AAA38190012AF15 /* iMkt_NewListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iMkt_NewListViewController.h; sourceTree = "<group>"; };
+		ABDCADDC1AAA38190012AF15 /* iMkt_NewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iMkt_NewListViewController.m; sourceTree = "<group>"; };
 		B9FB6F1A1AAA01F100C0AB00 /* iMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FB6F1E1AAA01F100C0AB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9FB6F1F1AAA01F100C0AB00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				B9FB6F651AAA093C00C0AB00 /* iMkt_RegisterViewController.m */,
 				B9FB6F481AAA042100C0AB00 /* iMkt_ListsViewController.h */,
 				B9FB6F491AAA042100C0AB00 /* iMkt_ListsViewController.m */,
+				ABDCADDB1AAA38190012AF15 /* iMkt_NewListViewController.h */,
+				ABDCADDC1AAA38190012AF15 /* iMkt_NewListViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			files = (
 				B9FB6F471AAA02AE00C0AB00 /* iMkt_LoginViewController.m in Sources */,
 				B9FB6F231AAA01F100C0AB00 /* AppDelegate.m in Sources */,
+				ABDCADDD1AAA38190012AF15 /* iMkt_NewListViewController.m in Sources */,
 				B9FB6F661AAA093C00C0AB00 /* iMkt_RegisterViewController.m in Sources */,
 				B9FB6F201AAA01F100C0AB00 /* main.m in Sources */,
 				B9FB6F4A1AAA042100C0AB00 /* iMkt_ListsViewController.m in Sources */,
@@ -506,6 +512,7 @@
 				B9FB6F3F1AAA01F100C0AB00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9FB6F401AAA01F100C0AB00 /* Build configuration list for PBXNativeTarget "iMarketTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +521,7 @@
 				B9FB6F421AAA01F100C0AB00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

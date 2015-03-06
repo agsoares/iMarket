@@ -179,12 +179,77 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Lists" id="bu7-dT-CRs">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="56X-PR-OfT"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="56X-PR-OfT">
+                            <connections>
+                                <segue destination="2Cf-9o-P9E" kind="show" id="pwU-15-xWs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="DRW-eB-wSc" kind="showDetail" id="ySc-cE-7c8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aos-ka-7hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1014" y="1170"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UEH-IZ-eNN">
+            <objects>
+                <viewController id="DRW-eB-wSc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dLD-rQ-6nk"/>
+                        <viewControllerLayoutGuide type="bottom" id="rbM-DP-j4q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wXD-bF-olQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Wz-3G-hYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1715" y="427"/>
+        </scene>
+        <!--New list-->
+        <scene sceneID="Tv2-zI-YI5">
+            <objects>
+                <viewController title="New list" id="2Cf-9o-P9E" customClass="iMkt_NewListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QHu-pG-mTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="hby-Ne-J8c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="snU-hi-849">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="List name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wN-fQ-9cU">
+                                <rect key="frame" x="172" y="193" width="257" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtListName:" destination="2Cf-9o-P9E" eventType="editingDidEnd" id="edg-9W-jgS"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="New" id="7KV-ND-zEg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="uJ4-uc-l7D">
+                            <connections>
+                                <action selector="createNewList:" destination="2Cf-9o-P9E" id="zYj-hH-5za"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="txtListName" destination="1wN-fQ-9cU" id="fkm-AN-CGD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NZY-b1-9AY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="1170"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T6S-fj-Zeb">
