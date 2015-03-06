@@ -23,6 +23,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)login:(id)sender {
+  _user = [PFUser user];
+  [PFUser logInWithUsernameInBackground:_username.text password:_password.text block:^(PFUser *user, NSError *error) {
+    if (error) {
+      NSLog(@"Login Fail!");
+    } else {
+      _user = user;
+      [self performSegueWithIdentifier:@"LoginSegue" sender:sender];
+    }
+  }];
+  
+}
 
 /*
 #pragma mark - Navigation
