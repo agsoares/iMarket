@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "iMkt_List.h"
 
-@interface iMkt_ListsViewController : UIViewController
-
+@interface iMkt_ListsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property PFUser *user;
+@property NSMutableArray *lists;
 @end

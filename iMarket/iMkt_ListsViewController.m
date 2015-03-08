@@ -7,6 +7,7 @@
 //
 
 #import "iMkt_ListsViewController.h"
+#import "iMkt_ItemListViewController.h"
 
 @interface iMkt_ListsViewController ()
 
@@ -15,23 +16,54 @@
 @implementation iMkt_ListsViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  
+  _lists = [iMkt_List loadUserLists:_user];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return [_lists count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  static NSString *simpleTableIdentifier = @"ListNewCell";
+  
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+  
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+  }
+  
+  cell.textLabel.text = [(iMkt_List *)[self.lists objectAtIndex:indexPath.row] name];
+
+  return cell;
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [self performSegueWithIdentifier:@"ItemListSegue" sender:indexPath];
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"ItemListSegue"] ) {
+    NSIndexPath *indexPath = (NSIndexPath *)sender;
+    iMkt_ItemListViewController *dvc = (iMkt_ItemListViewController *)segue.destinationViewController;
+    dvc.list = [_lists objectAtIndex:indexPath.row];
+  }
+  
+  
+  // Get the new view controller using [segue destinationViewController].
+  // Pass the selected object to the new view controller.
+}
+
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C6572411AAAA3BF00B0BA5A /* iMkt_List.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6572401AAAA3BF00B0BA5A /* iMkt_List.m */; };
+		3C6572441AAAA42200B0BA5A /* iMkt_ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6572431AAAA42200B0BA5A /* iMkt_ListItem.m */; };
+		3C6572471AACD63B00B0BA5A /* iMkt_ItemListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6572461AACD63B00B0BA5A /* iMkt_ItemListViewController.m */; };
 		ABDCADDD1AAA38190012AF15 /* iMkt_NewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDCADDC1AAA38190012AF15 /* iMkt_NewListViewController.m */; };
 		B9FB6F201AAA01F100C0AB00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FB6F1F1AAA01F100C0AB00 /* main.m */; };
 		B9FB6F231AAA01F100C0AB00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FB6F221AAA01F100C0AB00 /* AppDelegate.m */; };
@@ -42,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C65723F1AAAA3BF00B0BA5A /* iMkt_List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iMkt_List.h; sourceTree = "<group>"; };
+		3C6572401AAAA3BF00B0BA5A /* iMkt_List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iMkt_List.m; sourceTree = "<group>"; };
+		3C6572421AAAA42200B0BA5A /* iMkt_ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iMkt_ListItem.h; sourceTree = "<group>"; };
+		3C6572431AAAA42200B0BA5A /* iMkt_ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iMkt_ListItem.m; sourceTree = "<group>"; };
+		3C6572451AACD63B00B0BA5A /* iMkt_ItemListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iMkt_ItemListViewController.h; sourceTree = "<group>"; };
+		3C6572461AACD63B00B0BA5A /* iMkt_ItemListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iMkt_ItemListViewController.m; sourceTree = "<group>"; };
 		ABDCADDB1AAA38190012AF15 /* iMkt_NewListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iMkt_NewListViewController.h; sourceTree = "<group>"; };
 		ABDCADDC1AAA38190012AF15 /* iMkt_NewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iMkt_NewListViewController.m; sourceTree = "<group>"; };
 		B9FB6F1A1AAA01F100C0AB00 /* iMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +177,10 @@
 		B9FB6F431AAA023200C0AB00 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3C65723F1AAAA3BF00B0BA5A /* iMkt_List.h */,
+				3C6572401AAAA3BF00B0BA5A /* iMkt_List.m */,
+				3C6572421AAAA42200B0BA5A /* iMkt_ListItem.h */,
+				3C6572431AAAA42200B0BA5A /* iMkt_ListItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -183,6 +196,8 @@
 				B9FB6F491AAA042100C0AB00 /* iMkt_ListsViewController.m */,
 				ABDCADDB1AAA38190012AF15 /* iMkt_NewListViewController.h */,
 				ABDCADDC1AAA38190012AF15 /* iMkt_NewListViewController.m */,
+				3C6572451AACD63B00B0BA5A /* iMkt_ItemListViewController.h */,
+				3C6572461AACD63B00B0BA5A /* iMkt_ItemListViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -307,10 +322,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9FB6F471AAA02AE00C0AB00 /* iMkt_LoginViewController.m in Sources */,
+				3C6572441AAAA42200B0BA5A /* iMkt_ListItem.m in Sources */,
 				B9FB6F231AAA01F100C0AB00 /* AppDelegate.m in Sources */,
+				3C6572471AACD63B00B0BA5A /* iMkt_ItemListViewController.m in Sources */,
 				ABDCADDD1AAA38190012AF15 /* iMkt_NewListViewController.m in Sources */,
 				B9FB6F661AAA093C00C0AB00 /* iMkt_RegisterViewController.m in Sources */,
 				B9FB6F201AAA01F100C0AB00 /* main.m in Sources */,
+				3C6572411AAAA3BF00B0BA5A /* iMkt_List.m in Sources */,
 				B9FB6F4A1AAA042100C0AB00 /* iMkt_ListsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
