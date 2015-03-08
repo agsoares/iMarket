@@ -8,6 +8,7 @@
 
 #import "iMkt_ListsViewController.h"
 #import "iMkt_ItemListViewController.h"
+#import "iMkt_NewListViewController.h"
 
 @interface iMkt_ListsViewController ()
 
@@ -51,10 +52,6 @@
     iMkt_ItemListViewController *dvc = (iMkt_ItemListViewController *)segue.destinationViewController;
     dvc.list = [_lists objectAtIndex:indexPath.row];
   }
-  
-  
-  // Get the new view controller using [segue destinationViewController].
-  // Pass the selected object to the new view controller.
 }
 
 
@@ -63,7 +60,19 @@
   // Dispose of any resources that can be recreated.
 }
 
-
+- (IBAction)createList:(UIStoryboardSegue *)segue {
+  if ([segue.identifier isEqualToString:@"NewListUnwindSegue"]) {
+    
+    iMkt_NewListViewController *vc = (iMkt_NewListViewController *) segue.sourceViewController;
+    if ([vc.nameOfList length] > 0) {
+      
+      iMkt_List *newList = [[iMkt_List alloc] initWithName:vc.nameOfList andUser:_user];
+      [_lists addObject:newList];
+      [_tableView reloadData];
+    }
+    
+  }
+}
 
 
 @end

@@ -11,6 +11,7 @@
 @implementation iMkt_NewListViewController
 
 - (IBAction)createNewList:(id)sender {
-    
+  _nameOfList = _txtListName.text;
+  [self performSegueWithIdentifier:@"NewListUnwindSegue" sender:sender];
 }
 @end

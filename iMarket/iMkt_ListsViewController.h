@@ -11,6 +11,7 @@
 #import "iMkt_List.h"
 
 @interface iMkt_ListsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property PFUser *user;
 @property NSMutableArray *lists;
 @end

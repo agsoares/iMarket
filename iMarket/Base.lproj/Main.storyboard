@@ -207,11 +207,12 @@
                     <navigationItem key="navigationItem" title="My Lists" id="bu7-dT-CRs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="56X-PR-OfT">
                             <connections>
-                                <segue destination="2Cf-9o-P9E" kind="show" identifier="NewListSegue" id="pwU-15-xWs"/>
+                                <segue destination="2Cf-9o-P9E" kind="show" identifier="NewListSegue" id="E0f-cy-T9K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="P3C-GX-duC" id="st0-hD-Q0y"/>
                         <segue destination="DRW-eB-wSc" kind="show" identifier="ItemListSegue" id="6SZ-uJ-wpf"/>
                     </connections>
                 </viewController>
@@ -261,9 +262,6 @@
                                 <rect key="frame" x="172" y="193" width="257" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="txtListName:" destination="2Cf-9o-P9E" eventType="editingDidEnd" id="edg-9W-jgS"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -272,16 +270,18 @@
                     <navigationItem key="navigationItem" title="New List" id="7KV-ND-zEg">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="uJ4-uc-l7D">
                             <connections>
-                                <action selector="createNewList:" destination="2Cf-9o-P9E" id="zYj-hH-5za"/>
+                                <action selector="createNewList:" destination="2Cf-9o-P9E" id="qpp-me-79H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="txtListName" destination="1wN-fQ-9cU" id="fkm-AN-CGD"/>
+                        <outlet property="txtListName" destination="1wN-fQ-9cU" id="k7A-Vo-LSP"/>
+                        <segue destination="zbx-EB-bpG" kind="unwind" identifier="NewListUnwindSegue" unwindAction="createList:" id="lml-Fa-UJe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZY-b1-9AY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zbx-EB-bpG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1733" y="901"/>
         </scene>
