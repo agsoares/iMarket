@@ -114,6 +114,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26D54AA81AAE23E40075A49F /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = pictures;
+			sourceTree = "<group>";
+		};
 		B9FB6F111AAA01F100C0AB00 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +148,7 @@
 				B9FB6F211AAA01F100C0AB00 /* AppDelegate.h */,
 				B9FB6F221AAA01F100C0AB00 /* AppDelegate.m */,
 				B9FB6F271AAA01F100C0AB00 /* Main.storyboard */,
+				26D54AA81AAE23E40075A49F /* pictures */,
 				B9FB6F2A1AAA01F100C0AB00 /* Images.xcassets */,
 				B9FB6F2C1AAA01F100C0AB00 /* LaunchScreen.xib */,
 				B9FB6F1D1AAA01F100C0AB00 /* Supporting Files */,
