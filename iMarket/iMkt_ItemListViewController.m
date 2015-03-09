@@ -13,6 +13,7 @@
 @property NSArray *toBuy;
 @property NSArray *inKart;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *txtNewItem;
 
 @end
 
@@ -25,6 +26,15 @@
   _inKart = [[NSArray alloc] initWithArray:[_list.listItems filteredArrayUsingPredicate:checked]];
 }
 
+- (IBAction)addItem:(id)sender {
+  if (_txtNewItem.text.length > 0) {
+    iMkt_ListItem *newItem = [[iMkt_ListItem alloc] initWithName:_txtNewItem.text inList:_list];
+    [_list.listItems addObject:newItem];
+    [self ReloadArrays];
+    [_tableView reloadData];
+  }
+  
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
