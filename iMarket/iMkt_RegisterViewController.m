@@ -8,7 +8,7 @@
 
 #import "iMkt_RegisterViewController.h"
 
-@interface iMkt_RegisterViewController ()
+@interface iMkt_RegisterViewController  () <UITextFieldDelegate>
 
 
 
@@ -51,6 +51,19 @@
   }];
 }
 
+- (IBAction)returnKeyboard:(id)sender {
+    [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if([textField isEqual: _username])
+    {
+
+    }
+    
+    return YES;
+}
 
 
 /*
