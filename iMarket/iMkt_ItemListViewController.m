@@ -49,7 +49,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [_list.listItems count];
+  NSPredicate *notChecked = [NSPredicate predicateWithFormat:@"checked == NO"];
+  NSPredicate *checked = [NSPredicate predicateWithFormat:@"checked == YES"];
+  switch (section) {
+    case 0:
+      return [[_list.listItems filteredArrayUsingPredicate:notChecked] count];
+      break;
+      
+    case 1:
+      return [[_list.listItems filteredArrayUsingPredicate:checked] count];
+      break;
+      
+    default:
+      return 0;
+      break;
+  }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
