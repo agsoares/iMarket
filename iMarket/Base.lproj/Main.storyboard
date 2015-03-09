@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--I Mkt Login View Controller-->
@@ -131,32 +132,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZM6-GL-1VN">
-                                <rect key="frame" x="180" y="228" width="241" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fundo login" translatesAutoresizingMaskIntoConstraints="NO" id="PmC-Lq-lci">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZM6-GL-1VN">
+                                <rect key="frame" x="218" y="228" width="165" height="30"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.92549019607843142" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="dlu-Fb-pi2" id="CZo-aw-F3F"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Xb-SR-AN7">
-                                <rect key="frame" x="180" y="304" width="241" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="dlu-Fb-pi2" id="MDc-2E-Fi8"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-00-Y3X">
-                                <rect key="frame" x="180" y="266" width="241" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-00-Y3X">
+                                <rect key="frame" x="218" y="304" width="164" height="30"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.91764705882352937" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="Kfm-Vx-Nsq"/>
+                                    <constraint firstAttribute="height" constant="30" id="wWF-8Y-9UB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="dlu-Fb-pi2" id="ri9-yK-l3n"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YiO-FV-fq8">
-                                <rect key="frame" x="180" y="342" width="241" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YiO-FV-fq8">
+                                <rect key="frame" x="218" y="266" width="164" height="30"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.91764705882352937" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3TK-Om-Hlo"/>
+                                    <constraint firstAttribute="width" constant="164" id="3xs-MR-fK6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
@@ -164,7 +171,12 @@
                                 </connections>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDj-eB-QiI">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="1ra-4q-k18"/>
+                                </constraints>
+                                <color key="tintColor" red="0.70980392160000005" green="0.47843137250000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="SignUp" id="gbB-KH-77u">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7J6-sv-icP">
@@ -187,16 +199,31 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Xb-SR-AN7">
+                                <rect key="frame" x="218" y="342" width="165" height="30"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.91764705882352937" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dlu-Fb-pi2" id="MDc-2E-Fi8"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="SDj-eB-QiI" secondAttribute="centerX" id="5Zc-Sb-xcf"/>
-                            <constraint firstAttribute="centerX" secondItem="8Xb-SR-AN7" secondAttribute="centerX" constant="-0.5" id="Euo-uT-uks"/>
+                            <constraint firstItem="8Xb-SR-AN7" firstAttribute="leading" secondItem="n6Z-00-Y3X" secondAttribute="leading" id="4a7-B0-4zS"/>
+                            <constraint firstItem="8Xb-SR-AN7" firstAttribute="top" secondItem="n6Z-00-Y3X" secondAttribute="bottom" constant="8" symbolic="YES" id="D0D-9n-KOT"/>
+                            <constraint firstItem="9vM-Xx-qYS" firstAttribute="top" secondItem="8Xb-SR-AN7" secondAttribute="bottom" constant="228" id="ENS-By-mng"/>
                             <constraint firstAttribute="centerX" secondItem="n6Z-00-Y3X" secondAttribute="centerX" constant="-0.5" id="K0W-TE-pxT"/>
-                            <constraint firstItem="SDj-eB-QiI" firstAttribute="width" secondItem="bZD-fA-URa" secondAttribute="width" id="RS1-r6-ok5"/>
                             <constraint firstAttribute="centerX" secondItem="YiO-FV-fq8" secondAttribute="centerX" constant="-0.5" id="Rd7-9M-AoJ"/>
-                            <constraint firstItem="SDj-eB-QiI" firstAttribute="top" secondItem="VPq-kf-sHN" secondAttribute="bottom" id="SRh-14-BeE"/>
+                            <constraint firstItem="n6Z-00-Y3X" firstAttribute="top" secondItem="YiO-FV-fq8" secondAttribute="bottom" constant="8" id="YZN-Vd-rLT"/>
+                            <constraint firstItem="SDj-eB-QiI" firstAttribute="leading" secondItem="bZD-fA-URa" secondAttribute="leading" id="cNi-nK-k3B"/>
+                            <constraint firstItem="SDj-eB-QiI" firstAttribute="centerX" secondItem="ZM6-GL-1VN" secondAttribute="centerX" id="d5p-Dr-edN"/>
+                            <constraint firstItem="8Xb-SR-AN7" firstAttribute="trailing" secondItem="ZM6-GL-1VN" secondAttribute="trailing" id="e9h-Z3-1DF"/>
+                            <constraint firstItem="8Xb-SR-AN7" firstAttribute="leading" secondItem="ZM6-GL-1VN" secondAttribute="leading" id="ed0-gY-Mtk"/>
+                            <constraint firstItem="YiO-FV-fq8" firstAttribute="top" secondItem="ZM6-GL-1VN" secondAttribute="bottom" constant="8" id="j9u-6Q-hz1"/>
                             <constraint firstAttribute="centerX" secondItem="ZM6-GL-1VN" secondAttribute="centerX" constant="-0.5" id="q6E-2u-9qp"/>
+                            <constraint firstItem="SDj-eB-QiI" firstAttribute="top" secondItem="bZD-fA-URa" secondAttribute="top" id="x2m-mW-Aop"/>
                         </constraints>
                         <connections>
                             <action selector="returnKeyboard:" destination="dlu-Fb-pi2" eventType="touchDown" id="fg5-g8-NFm"/>
@@ -214,7 +241,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGQ-A4-IeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JTG-Xp-7ac" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1227" y="300"/>
+            <point key="canvasLocation" x="1281" y="-477"/>
         </scene>
         <!--My Lists-->
         <scene sceneID="FSQ-Nr-phZ">
@@ -394,7 +421,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZY-b1-9AY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zbx-EB-bpG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1733" y="901"/>
+            <point key="canvasLocation" x="1715" y="1170"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T6S-fj-Zeb">
