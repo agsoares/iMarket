@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *email;
 
 @end
 
@@ -34,6 +35,7 @@
   _user = [PFUser user];
   _user.username = _username.text;
   _user.password = _password.text;
+  _user.email = _email.text;
   [_user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     if (error) {
       NSLog(@"Error");
