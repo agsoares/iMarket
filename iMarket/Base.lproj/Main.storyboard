@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DRW-eB-wSc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -280,7 +280,7 @@
                         <viewControllerLayoutGuide type="top" id="dLD-rQ-6nk"/>
                         <viewControllerLayoutGuide type="bottom" id="rbM-DP-j4q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wXD-bF-olQ">
+                    <view key="view" contentMode="scaleToFill" id="wXD-bF-olQ" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -315,14 +315,6 @@
                                     <outlet property="delegate" destination="DRW-eB-wSc" id="fcR-Zv-VgK"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASJ-hG-HJ9">
-                                <rect key="frame" x="16" y="560" width="497" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PPA-0I-FDI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trS-XH-y2n">
                                 <rect key="frame" x="521" y="560" width="63" height="30"/>
                                 <state key="normal" title="Add Item">
@@ -332,6 +324,17 @@
                                     <action selector="addItem:" destination="DRW-eB-wSc" eventType="touchUpInside" id="gut-8q-Imm"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASJ-hG-HJ9">
+                                <rect key="frame" x="16" y="560" width="497" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PPA-0I-FDI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DRW-eB-wSc" id="bRH-az-shJ"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -341,6 +344,9 @@
                             <constraint firstItem="rbM-DP-j4q" firstAttribute="top" secondItem="trS-XH-y2n" secondAttribute="bottom" constant="10" id="nQC-d4-vAT"/>
                             <constraint firstItem="ASJ-hG-HJ9" firstAttribute="leading" secondItem="wXD-bF-olQ" secondAttribute="leadingMargin" id="vPd-VY-dLE"/>
                         </constraints>
+                        <connections>
+                            <action selector="hideKeyboard:" destination="DRW-eB-wSc" eventType="touchDown" id="HnQ-pm-lLb"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Poi-92-Bjh" id="hRm-r4-y76"/>

@@ -122,7 +122,29 @@
   item.checked = !item.checked;
   [self ReloadArrays];
   [_tableView reloadData];
+    
+    [self.view endEditing:YES];
 
+}
+
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    if([textField isEqual:_txtNewItem])
+    {
+        [self addItem:nil];
+    }
+    return YES;
+}
+
+- (IBAction)hideKeyboard:(id)sender {
+    [self.view endEditing:YES];
+}
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
 }
 
 /*

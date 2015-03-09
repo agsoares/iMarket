@@ -10,7 +10,7 @@
 #import "iMkt_List.h"
 #import "iMkt_ListItem.h"
 
-@interface iMkt_ItemListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface iMkt_ItemListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property iMkt_List *list;
 
 @end
