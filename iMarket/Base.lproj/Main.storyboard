@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -24,7 +24,10 @@
                                     <constraint firstAttribute="width" constant="182" id="ga7-pw-J1X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xBy-dF-Uz0"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIN-T2-ElD">
                                 <rect key="frame" x="510" y="550" width="74" height="30"/>
@@ -59,7 +62,10 @@
                                     <constraint firstAttribute="height" constant="30" id="e2j-a3-Jns"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ocf-CK-u7R"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -74,6 +80,9 @@
                             <constraint firstItem="wye-bz-2uc" firstAttribute="centerX" secondItem="gfW-3U-JjM" secondAttribute="centerX" id="c4T-3m-TlA"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PIN-T2-ElD" secondAttribute="bottom" constant="20" id="jvH-iS-lwN"/>
                         </constraints>
+                        <connections>
+                            <action selector="returnKeyboard:" destination="BYZ-38-t0r" eventType="touchDown" id="2fI-P2-swx"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="password" destination="wye-bz-2uc" id="rRj-Mo-a3c"/>

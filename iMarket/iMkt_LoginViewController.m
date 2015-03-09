@@ -8,7 +8,7 @@
 
 #import "iMkt_LoginViewController.h"
 
-@interface iMkt_LoginViewController ()
+@interface iMkt_LoginViewController () <UITextFieldDelegate>
 
 @end
 
@@ -23,18 +23,43 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)login:(id)sender {
-  _user = [PFUser user];
-  [PFUser logInWithUsernameInBackground:_username.text password:_password.text block:^(PFUser *user, NSError *error) {
-    if (error) {
-      NSLog(@"Login Fail!");
-    } else {
-      _user = user;
-      [self performSegueWithIdentifier:@"LoginSegue" sender:sender];
-    }
-  }];
-  
+
+- (void) logingFunction{
+    _user = [PFUser user];
+    [PFUser logInWithUsernameInBackground:_username.text password:_password.text block:^(PFUser *user, NSError *error) {
+        if (error) {
+            NSLog(@"Login Fail!");
+        } else {
+            _user = user;
+            [self performSegueWithIdentifier:@"LoginSegue" sender:nil];
+        }
+    }];
 }
+
+- (IBAction)login:(id)sender {
+    [self logingFunction];
+}
+
+- (IBAction)returnKeyboard:(id)sender {
+    [self.view endEditing:YES];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if([textField isEqual:_username])
+    {
+        [_password becomeFirstResponder];
+    }
+    
+    if([textField isEqual:_password])
+    {
+        [self logingFunction];
+    }
+    
+    return YES;
+}
+
 
 /*
 #pragma mark - Navigation
