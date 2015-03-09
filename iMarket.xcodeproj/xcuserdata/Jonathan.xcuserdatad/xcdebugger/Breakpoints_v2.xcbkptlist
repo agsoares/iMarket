@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iMarket/iMkt_RegisterViewController.m"
-            timestampString = "447615641.265766"
+            timestampString = "447618271.140401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-textFieldShouldReturn:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iMarket/iMkt_RegisterViewController.m"
+            timestampString = "447616932.402763"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-registerNewUser"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

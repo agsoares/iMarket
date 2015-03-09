@@ -30,6 +30,9 @@
     [PFUser logInWithUsernameInBackground:_username.text password:_password.text block:^(PFUser *user, NSError *error) {
         if (error) {
             NSLog(@"Login Fail!");
+            UIAlertView *alertLoginError = [[UIAlertView alloc] initWithTitle:@"Incorrect credentials" message:@"Username and password do not match. Please, try again." delegate:self cancelButtonTitle:@"Dismiss"otherButtonTitles: nil];
+            [alertLoginError show];
+            
         } else {
             _user = user;
             [self performSegueWithIdentifier:@"LoginSegue" sender:nil];

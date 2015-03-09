@@ -33,23 +33,47 @@
 
 - (void) registerNewUser
 {
-    _user = [PFUser user];
-    _user.username = _username.text;
-    _user.password = _password.text;
-    _user.email = _email.text;
-    [_user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error) {
-            NSLog(@"Error");
-            return;
+    if ([_username.text length] == 0 ||
+        [_email.text length] == 0 ||
+        [_password.text length] == 0 ||
+        [_confirmPassword.text length] ==0)
+    {
+        UIAlertView *alertFillAllFields = [[UIAlertView alloc] initWithTitle:@"Empty fields remaining" message:@"All fields are required.\nPlease, fill the empty fields." delegate:self cancelButtonTitle:@"Dismiss"otherButtonTitles: nil];
+        [alertFillAllFields show];
+    }
+    
+    else
+    {
+        if ([_password.text isEqualToString:_confirmPassword.text])
+        {
+            _user = [PFUser user];
+            _user.username = _username.text;
+            _user.password = _password.text;
+            _user.email = _email.text;
+            [_user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    NSLog(@"Error");
+                    UIAlertView *alertSignUpError = [[UIAlertView alloc] initWithTitle:@"Sign up error" message:@"An unexpected error ocurred.\nPlease, check your internet connection or try a different username." delegate: self cancelButtonTitle:@"Dismiss"otherButtonTitles: nil];
+                    [alertSignUpError show];
+                    return;
+                }
+                
+                if (succeeded) {
+                    // Tell app delegate that the user signed up successfully
+                    //[(TDAppDelegate *)[NSApp delegate] authSuccess];
+                    NSLog(@"Ok");
+                    return;
+                }
+            }];
         }
         
-        if (succeeded) {
-            // Tell app delegate that the user signed up successfully
-            //[(TDAppDelegate *)[NSApp delegate] authSuccess];
-            NSLog(@"Ok");
-            return;
+        else
+        {
+            UIAlertView *alertPasswordsDontMatch = [[UIAlertView alloc] initWithTitle:@"Passwords do not match" message:@"Please insert the same password in both fields." delegate:self cancelButtonTitle:@"Dismiss"otherButtonTitles: nil];
+            [alertPasswordsDontMatch show];
         }
-    }];
+    }
+
 }
 
 - (IBAction)register:(id)sender {
