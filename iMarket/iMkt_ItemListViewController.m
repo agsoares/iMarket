@@ -7,15 +7,28 @@
 //
 
 #import "iMkt_ItemListViewController.h"
+#import "iMkt_ListItem.h"
 
 @interface iMkt_ItemListViewController ()
+@property NSArray *toBuy;
+@property NSArray *inKart;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation iMkt_ItemListViewController
 
+- (void) ReloadArrays {
+  NSPredicate *notChecked = [NSPredicate predicateWithFormat:@"checked == NO"];
+  NSPredicate *checked = [NSPredicate predicateWithFormat:@"checked == YES"];
+  _toBuy = [[NSArray alloc] initWithArray:[_list.listItems filteredArrayUsingPredicate:notChecked]];
+  _inKart = [[NSArray alloc] initWithArray:[_list.listItems filteredArrayUsingPredicate:checked]];
+}
+
+
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self ReloadArrays];
   //[[iMkt_ListItem alloc] initWithName:@"Item 1" inList:_list];
     // Do any additional setup after loading the view.
 }
@@ -49,15 +62,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  NSPredicate *notChecked = [NSPredicate predicateWithFormat:@"checked == NO"];
-  NSPredicate *checked = [NSPredicate predicateWithFormat:@"checked == YES"];
   switch (section) {
     case 0:
-      return [[_list.listItems filteredArrayUsingPredicate:notChecked] count];
+      return [_toBuy count];
       break;
       
     case 1:
-      return [[_list.listItems filteredArrayUsingPredicate:checked] count];
+      return [_inKart count];
       break;
       
     default:
@@ -74,11 +85,34 @@
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
   }
-  
-  cell.textLabel.text = [(iMkt_List *)[self.list.listItems objectAtIndex:indexPath.row] name];
+  switch (indexPath.section) {
+    case 0:
+      cell.textLabel.text = [[_toBuy objectAtIndex:indexPath.row] name];
+      break;
+      
+    case 1:
+      cell.textLabel.text = [[_inKart objectAtIndex:indexPath.row] name];
+      break;
+  }
   
   return cell;
   
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  iMkt_ListItem *item;
+  switch (indexPath.section) {
+    case 0:
+      item = [_toBuy objectAtIndex:indexPath.row];
+      break;
+    case 1:
+      item = [_inKart objectAtIndex:indexPath.row];
+      break;
+  }
+  item.checked = !item.checked;
+  [self ReloadArrays];
+  [_tableView reloadData];
+
 }
 
 /*
