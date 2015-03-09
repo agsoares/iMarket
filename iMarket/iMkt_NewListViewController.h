@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface iMkt_NewListViewController : UIViewController
-
+@property NSString *nameOfList;
 @property (weak, nonatomic) IBOutlet UITextField *txtListName;
 
 @end

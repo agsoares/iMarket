@@ -7,6 +7,7 @@
 //
 
 #import "iMkt_LoginViewController.h"
+#import "iMkt_ListsViewController.h"
 
 @interface iMkt_LoginViewController () <UITextFieldDelegate>
 
@@ -58,6 +59,19 @@
     }
     
     return YES;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+  if ([segue.identifier isEqualToString:@"LoginSegue"] ) {
+    UINavigationController *dnc = (UINavigationController *)segue.destinationViewController;
+    iMkt_ListsViewController *lvc = (iMkt_ListsViewController *)([dnc viewControllers][0]);
+    lvc.user = _user;
+  }
+}
+
+
+-(IBAction)backToLoginView:(UIStoryboardSegue *)sender {
+    
 }
 
 

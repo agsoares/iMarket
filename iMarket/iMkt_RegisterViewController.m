@@ -49,10 +49,7 @@
   }];
 }
 
--(IBAction)backToLoginView:(UIStoryboardSegue *)sender
-{
 
-}
 
 /*
 #pragma mark - Navigation
