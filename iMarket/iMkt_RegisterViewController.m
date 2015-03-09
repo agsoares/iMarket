@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPassword;
 
 @end
 
@@ -30,25 +31,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) registerNewUser
+{
+    _user = [PFUser user];
+    _user.username = _username.text;
+    _user.password = _password.text;
+    _user.email = _email.text;
+    [_user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            NSLog(@"Error");
+            return;
+        }
+        
+        if (succeeded) {
+            // Tell app delegate that the user signed up successfully
+            //[(TDAppDelegate *)[NSApp delegate] authSuccess];
+            NSLog(@"Ok");
+            return;
+        }
+    }];
+}
 
 - (IBAction)register:(id)sender {
-  _user = [PFUser user];
-  _user.username = _username.text;
-  _user.password = _password.text;
-  _user.email = _email.text;
-  [_user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-    if (error) {
-      NSLog(@"Error");
-      return;
-    }
-    
-    if (succeeded) {
-      // Tell app delegate that the user signed up successfully
-      //[(TDAppDelegate *)[NSApp delegate] authSuccess];
-      NSLog(@"Ok");
-      return;
-    }
-  }];
+    [self registerNewUser];
 }
 
 - (IBAction)returnKeyboard:(id)sender {
@@ -57,9 +62,22 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    
     if([textField isEqual: _username])
     {
-
+        [_email becomeFirstResponder];
+    }
+    else if ([textField isEqual: _email])
+    {
+        [_password becomeFirstResponder];
+    }
+    else if ([textField isEqual: _password])
+    {
+        [_confirmPassword becomeFirstResponder];
+    }
+    else if ([textField isEqual:_confirmPassword])
+    {
+        [self registerNewUser];
     }
     
     return YES;
