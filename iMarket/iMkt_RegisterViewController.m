@@ -62,6 +62,7 @@
                     // Tell app delegate that the user signed up successfully
                     //[(TDAppDelegate *)[NSApp delegate] authSuccess];
                     NSLog(@"Ok");
+                    [self performSegueWithIdentifier:@"UnwindLoginSegue" sender:nil];
                     return;
                 }
             }];
