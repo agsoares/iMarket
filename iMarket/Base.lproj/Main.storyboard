@@ -43,17 +43,8 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bfb-6l-DiN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iMarket" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nK-QW-DM0">
-                                <rect key="frame" x="265" y="263" width="89" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="89" id="toi-fq-IKr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.70980392160000005" green="0.47843137250000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="ioK-C1-FrC">
-                                <rect key="frame" x="209" y="36" width="200" height="196"/>
+                                <rect key="frame" x="200" y="43" width="200" height="196"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ioK-C1-FrC" secondAttribute="height" multiplier="50:49" id="6Pf-Tc-xIt"/>
                                     <constraint firstAttribute="width" constant="200" id="6lV-cJ-5FG"/>
@@ -83,20 +74,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ocf-CK-u7R"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iMarket" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nK-QW-DM0">
+                                <rect key="frame" x="256" y="265" width="89" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="89" id="toi-fq-IKr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="0.70980392160000005" green="0.47843137250000001" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="gfW-3U-JjM" secondAttribute="centerX" id="1UC-v9-t35"/>
-                            <constraint firstAttribute="centerX" secondItem="ioK-C1-FrC" secondAttribute="centerX" constant="-9" id="C8h-Hy-Ph4"/>
+                            <constraint firstAttribute="centerX" secondItem="ioK-C1-FrC" secondAttribute="centerX" id="C8h-Hy-Ph4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PIN-T2-ElD" secondAttribute="bottom" constant="20" id="Cjf-ZS-MbE"/>
                             <constraint firstItem="5iu-bb-ini" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GIC-iE-4pB"/>
                             <constraint firstItem="5iu-bb-ini" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="O0D-X4-oWR"/>
-                            <constraint firstItem="6nK-QW-DM0" firstAttribute="top" secondItem="ioK-C1-FrC" secondAttribute="bottom" constant="31" id="Sa7-Gj-P2Y"/>
+                            <constraint firstItem="6nK-QW-DM0" firstAttribute="top" secondItem="ioK-C1-FrC" secondAttribute="bottom" constant="26" id="Sa7-Gj-P2Y"/>
                             <constraint firstAttribute="centerX" secondItem="wye-bz-2uc" secondAttribute="centerX" id="Tei-Oe-5Xr"/>
-                            <constraint firstItem="ioK-C1-FrC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="WZO-bB-L8d"/>
+                            <constraint firstItem="ioK-C1-FrC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="WZO-bB-L8d"/>
                             <constraint firstAttribute="centerX" secondItem="v8M-OI-EUn" secondAttribute="centerX" constant="-0.5" id="Z8Z-P2-WDQ"/>
-                            <constraint firstAttribute="centerX" secondItem="6nK-QW-DM0" secondAttribute="centerX" constant="-9.5" id="bXc-iN-CM2"/>
-                            <constraint firstItem="gfW-3U-JjM" firstAttribute="top" secondItem="6nK-QW-DM0" secondAttribute="bottom" constant="71" id="mre-hr-945"/>
+                            <constraint firstAttribute="centerX" secondItem="6nK-QW-DM0" secondAttribute="centerX" constant="-0.5" id="bXc-iN-CM2"/>
+                            <constraint firstItem="gfW-3U-JjM" firstAttribute="top" secondItem="6nK-QW-DM0" secondAttribute="bottom" constant="69" id="mre-hr-945"/>
                             <constraint firstItem="5iu-bb-ini" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="nfs-Q3-PBC"/>
                             <constraint firstItem="gfW-3U-JjM" firstAttribute="width" secondItem="wye-bz-2uc" secondAttribute="width" id="skA-S7-OLo"/>
                             <constraint firstItem="PIN-T2-ElD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tBQ-no-SLz"/>
