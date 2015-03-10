@@ -182,7 +182,7 @@
                                     <navigationItem title="SignUp" id="gbB-KH-77u">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7J6-sv-icP">
                                             <connections>
-                                                <segue destination="JTG-Xp-7ac" kind="unwind" unwindAction="backToLoginView:" id="RnF-Cw-POD"/>
+                                                <segue destination="JTG-Xp-7ac" kind="unwind" identifier="UnwindLoginSegue" unwindAction="backToLoginView:" id="RnF-Cw-POD"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="zhy-TN-kbq">
@@ -242,7 +242,6 @@
                         <outlet property="email" destination="n6Z-00-Y3X" id="hFs-mr-arS"/>
                         <outlet property="password" destination="8Xb-SR-AN7" id="Yhq-Tx-DIC"/>
                         <outlet property="username" destination="ZM6-GL-1VN" id="Yh8-A7-99U"/>
-                        <segue destination="JTG-Xp-7ac" kind="unwind" unwindAction="backToLoginView:" id="0cx-Hw-zgB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGQ-A4-IeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
