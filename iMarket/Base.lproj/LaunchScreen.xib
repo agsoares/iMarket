@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,6 +14,13 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fundo login" translatesAutoresizingMaskIntoConstraints="NO" id="EFW-ND-Wmz">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="vij-Wb-ZZt">
+                    <rect key="frame" x="134" y="98" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vij-Wb-ZZt" secondAttribute="height" multiplier="507:506" id="fMO-Qd-j0J"/>
+                        <constraint firstAttribute="width" constant="200" id="rqo-aA-Aet"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -20,15 +28,18 @@
                 <constraint firstItem="EFW-ND-Wmz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BZ0-cT-Viu"/>
                 <constraint firstAttribute="bottom" secondItem="EFW-ND-Wmz" secondAttribute="bottom" id="E9H-bj-smm"/>
                 <constraint firstItem="EFW-ND-Wmz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Mhd-ab-qdW"/>
+                <constraint firstAttribute="centerX" secondItem="vij-Wb-ZZt" secondAttribute="centerX" constant="6" id="N10-Au-MAX"/>
                 <constraint firstItem="EFW-ND-Wmz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ie3-Uq-QzZ"/>
                 <constraint firstAttribute="trailing" secondItem="EFW-ND-Wmz" secondAttribute="trailing" id="xnh-kN-aWZ"/>
+                <constraint firstAttribute="centerY" secondItem="vij-Wb-ZZt" secondAttribute="centerY" constant="42" id="yL4-Px-SNj"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="548" y="455"/>
+            <point key="canvasLocation" x="548" y="266"/>
         </view>
     </objects>
     <resources>
         <image name="fundo login" width="1024" height="768"/>
+        <image name="login" width="507" height="506"/>
     </resources>
 </document>
