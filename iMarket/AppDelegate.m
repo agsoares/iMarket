@@ -23,6 +23,8 @@
   [Parse setApplicationId:@"0ZuUfZHmT86NScShCG9xk4Cc40JBqh9uTc8DbVAK"
                 clientKey:@"iQkKWlcOax5qEcClubVq7IDuzh5uPMaEriZmg6fv"];
   
+  [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:186/255.0 green:152/255.0 blue:140/255.0 alpha:1]];
+  
   return YES;
 }
 

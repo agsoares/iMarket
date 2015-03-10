@@ -20,5 +20,5 @@
 - (iMkt_List *)initWithName:(NSString *)name andUser:(PFUser *)user;
 
 - (void) save;
-- (void) update;
+- (void) deleteObject;
 @end

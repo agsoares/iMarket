@@ -23,6 +23,7 @@
 
 - (void)save;
 - (void)update;
+- (void)deleteObject;
 
 
 @end

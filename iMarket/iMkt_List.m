@@ -54,8 +54,11 @@
   }];
 }
 
-- (void)update {
-
+- (void)deleteObject {
+  for (iMkt_ListItem *item in _listItems) {
+    [item deleteObject];
+  }
+  [_object deleteInBackground];
 
 }
 @end

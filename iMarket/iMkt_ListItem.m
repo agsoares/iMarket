@@ -59,5 +59,13 @@
 }
 
 
--(void)update {}
+-(void)update {
+  _object[@"checked"] = [NSNumber numberWithBool:_checked];
+  _object[@"quantity"] = [NSNumber numberWithInteger:_quantity];
+  [_object saveInBackground];
+}
+
+-(void)deleteObject {
+  [_object deleteInBackground];
+}
 @end

@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
   _lists = [iMkt_List loadUserLists:_user];
 }
 
@@ -42,6 +41,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [tableView deselectRowAtIndexPath:indexPath animated:NO];
   [self performSegueWithIdentifier:@"ItemListSegue" sender:indexPath];
 
 }
@@ -54,6 +54,21 @@
   }
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+  return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return UITableViewCellEditingStyleDelete;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  [[_lists objectAtIndex:indexPath.row] deleteObject];
+  [_lists removeObjectAtIndex:indexPath.row];
+  [tableView reloadData];
+
+}
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
