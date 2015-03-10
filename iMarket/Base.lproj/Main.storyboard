@@ -404,6 +404,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="heightTextField" destination="s5t-Vn-wQs" id="sx9-GB-2L5"/>
                         <outlet property="tableView" destination="Poi-92-Bjh" id="hRm-r4-y76"/>
                         <outlet property="txtNewItem" destination="ASJ-hG-HJ9" id="8be-jz-98U"/>
                     </connections>

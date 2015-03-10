@@ -14,10 +14,17 @@
 @property NSArray *inKart;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *txtNewItem;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightTextField;
 
 @end
 
-@implementation iMkt_ItemListViewController
+@implementation iMkt_ItemListViewController{
+  CGFloat _initialConstant;
+}
+
+// A small offset so the button won't be immediately above the keyboard.
+static CGFloat keyboardHeightOffset = 18.0f;
+
 
 - (void) ReloadArrays {
   NSPredicate *notChecked = [NSPredicate predicateWithFormat:@"checked == NO"];
@@ -40,6 +47,46 @@
   [super viewDidLoad];
   [_tableView setBackgroundColor:[UIColor colorWithRed:253/255.0 green:241/255.0 blue:236/255.0 alpha:1]]; // (253,241,236).
   [self ReloadArrays];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+
+}
+
+
+- (void)keyboardWillShow:(NSNotification*)notification {
+  // Getting the keyboard frame and animation duration.
+  CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+  NSTimeInterval keyboardAnimationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+  
+  if (!_initialConstant) {
+    _initialConstant = _heightTextField.constant;
+  }
+  
+  // If screen can fit everything, leave the constant untouched.
+  _heightTextField.constant = MAX(keyboardFrame.size.height + keyboardHeightOffset, _initialConstant);
+  [UIView animateWithDuration:keyboardAnimationDuration animations:^{
+    // This method will automatically animate all views to satisfy new constants.
+    [self.view layoutIfNeeded];
+  }];
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)notification {
+  
+  // Getting the keyboard frame and animation duration.
+  NSTimeInterval keyboardAnimationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+  
+  // Putting everything back to place.
+  _heightTextField.constant = _initialConstant;
+  [UIView animateWithDuration:keyboardAnimationDuration animations:^{
+    [self.view layoutIfNeeded];
+  }];
+  
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
